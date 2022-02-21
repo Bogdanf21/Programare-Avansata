@@ -29,5 +29,17 @@ public class Doctor extends Person {
         pacienti.add(pacient);
     }
 
+    @Override
+    public String toString() {
+        String temp;
+        temp = "Doctorul" + this.nume + "(" + this.profesie + ")" + "(" ;
+        for (Pacient pacient : pacienti) {
+            temp+= pacient;
+        }
+        temp+= ")";
+        return temp;
+    }
+
+
 
 }

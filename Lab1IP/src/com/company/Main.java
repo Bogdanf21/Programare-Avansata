@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        System.out.println("HELLO WORLD ");
         Pacient pac1 = new Pacient("Popescu","boala1");
         Pacient pac2 = new Pacient("Ionescu","boala2");
         Pacient pac3 = new Pacient("Vasilescu","boala3");
@@ -18,8 +17,8 @@ public class Main {
         doc1.addPacient(pac1);
         doc1.addPacient(pac2);
         doc1.addPacient(pac3);
-        doc1.printPacienti();
-        doc2.printPacienti();
+        System.out.println(doc1);
+        System.out.println(doc2);
     }
 
 }

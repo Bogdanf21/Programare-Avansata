@@ -9,4 +9,8 @@ public class Pacient extends Person {
     }
     public String getBoala(){return boala;}
     public String getNume(){return nume;}
+    @Override
+    public String toString() {
+        return "Pacientul " + this.nume + ", boala: " + this.boala ;
+    }
 }
