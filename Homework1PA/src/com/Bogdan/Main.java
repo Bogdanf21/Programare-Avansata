@@ -11,40 +11,44 @@ import static java.lang.Integer.parseInt;
 public class Main {
 
     public static void main(String[] args) {
-        compulsory();
-      HomeworkPlusBonus(args);
+      //  compulsory();
+        if(args.length>=3)
+      homeworkPlusBonus(args);
+        else
+            throw new RuntimeException("No program arguments");
 
     }
 
-    public static void HomeworkPlusBonus(String[] args)
+    public static void homeworkPlusBonus(String[] args)
     {
         System.out.println("Running...");
-        boolean debug = false;
-        long start = System.currentTimeMillis();
+        boolean debug = false; // am scos print-urile cu asta
+        long start = System.currentTimeMillis(); // timp pentru ultimul punct
         int counter = 2, noOfArguments = args.length;
 
         //1
         int n,p;
         ArrayList<Character> letters = new ArrayList<>();
 
-        try {
+        try { // puteam sa las direct throw-ul default de la parseInt, am facut asa sa se vada ca e "tratat" cazul asta
             n = parseInt(args[0]);
             p = parseInt(args[1]);
             if(n < 0 || p < 0)
-                throw new Exception();
+                throw new Exception(); // Nu conteaza ce scrie in exceptia asta, e catched de cea de la linia 39
         } catch (Exception e) {
-            throw new IllegalArgumentException("Expected positive int as first 2 parameters");
+            throw new IllegalArgumentException("Expected positive int as first 2 parameters or run arguments not found");
         }
         if(debug) System.out.printf("Numbers (n,p) = (%d,%d);\n", n, p);
 
 
         while (counter < noOfArguments) {
+            //Am mers pe premisa ca trebuie cate un spatiu intre fiecare litera, din acest motiv abordarea asta. Daca e scris un cuvant, va fi luata in considerare doar prima litera
             char temp = args[counter].charAt(0);
             counter++;
             if (Character.isLetter(temp)) {
-                if(!letters.contains(temp))
+                if(!letters.contains(temp)) // duplicatele nu influenteaza probabilitatea de a fi aleasa o litera
                     letters.add(temp);
-            } else throw new IllegalArgumentException("Expected letters or 0 (as end of reading)");
+            } else throw new IllegalArgumentException("Expected letters after 2 ints");
         }
 
         ////////////////////////////////////////////////// 2 //////////////////////
@@ -55,12 +59,12 @@ public class Main {
         {
             StringBuilder word = new StringBuilder(p);
             for(int j=0;j<p;j++)
-            {
-                int randomIndex = ThreadLocalRandom.current().nextInt(0,letters.size());
+            {// Asta e ce am gasit pe internet legat de random strings, am vazut ca implementarea din suportul de laborator e mai simpla dar am lasat asa.
+                int randomIndex = ThreadLocalRandom.current().nextInt(0,letters.size()); // index random dintre (origin,end-1)
                 char randomCharFromLetters = letters.get(randomIndex);
-                word.append(randomCharFromLetters);
+                word.append(randomCharFromLetters); // litera adaugata la cuvant
             }
-            words[i]=word.toString();
+            words[i]=word.toString(); // word copiat
             if(debug) System.out.printf("   %s", word);
 
 
@@ -102,7 +106,7 @@ public class Main {
             int digit = n%10;
             n/=10;
             sum+=digit;
-            if(n==0 && sum>10)
+            if(n==0 && sum>10) // daca am ajuns in punctul in care am scos toate cifrele si suma e mai mare ca 10, mai trec o data prin while cu suma cifrelor
             {
                 n=sum;
                 sum=0;

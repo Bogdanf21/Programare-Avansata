@@ -15,17 +15,16 @@ public class Matrix {
     {
         _words = strings;
         _size = strings.length;
-      _neighbours = (ArrayList<String>[])new ArrayList[_size];
-        _m = new boolean[_size][_size];
+      _neighbours = (ArrayList<String>[])new ArrayList[_size]; // lista (fixa care e egal cu nr de cuvinte) de arrayList (dinamica) unde vor fi vecinii
+        _m = new boolean[_size][_size]; // matricea NxN
         for(int i=0;i<_size;i++)
-        {   _neighbours[i] = new ArrayList<String>(_size/2);
+        {   _neighbours[i] = new ArrayList<String>(); // initializez lista de vecini
             if(i%1000 == 0)
-            System.out.printf("i=%d\n",i);
+            System.out.printf("i=%d\n",i); // doar un check sa vad la ce pas a ajuns (din 30k)
             for(int j=0; j<_size;j++)
             {
-
-                _m[i][j] = areNeighbours(strings[i], strings[j]);
-                if(_m[i][j] && i != j)
+                _m[i][j] = areNeighbours(strings[i], strings[j]); // 0-daca nu sunt vecini 1-daca sunt
+                if(_m[i][j] && i != j) // i != j sa nu il pun pe string-ul x ca fiind vecinul lui x
                     _neighbours[i].add(strings[j]);
             }
         }
@@ -40,33 +39,31 @@ public class Matrix {
             for(int j=0;j<b.length();j++)
                 if(a.charAt(i) == b.charAt(j))
                     return true;
-
         return false;
     }
     public String toString()
     {
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         for(int i=0;i<_size;i++)
         {
             for(int j=0; j<_size;j++)
-                temp = temp + _m[i][j] + " ";
-
-            temp = temp + "\n";
+                temp.append(_m[i][j] + " ");
+            temp.append("\n");
         }
-        return temp;
+
+        return temp.toString();
     }
 
     public String printNeighbourLists()
     {
-        String temp = "Neighbours of LHS are RHS\n";
+        StringBuilder temp = new StringBuilder( "Neighbours of LHS are RHS\n");
         for(int i=0;i<_size;i++)
         {
-            temp = temp + _words[i] + ":";
-            temp += _neighbours[i];
-            temp += "\n";
-
+            temp.append(_words[i] + ":");
+            temp.append(_neighbours[i]);
+            temp.append("\n");
         }
-        return temp;
+        return temp.toString();
     }
 
     public void printLongestSequence()
