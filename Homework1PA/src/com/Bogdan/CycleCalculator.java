@@ -12,29 +12,38 @@ public class CycleCalculator {
         _m = matrix;
         _matrixLength = _m[0].length;
         List<Integer> temp = new ArrayList<Integer>();
-        _longestList = new ArrayList<>();
+
 
        for(int i=0;i<_matrixLength;i++)
        {
            temp.add(i);
-           List<Integer> temporaryList2 = _calculate(i,temp);
-           System.out.println("CE AM PRIMIT IN MAIN: " + temporaryList2);
-           if(temporaryList2 != null)
-                    if(temporaryList2.size() > _longestList.size())
-                        _longestList = temporaryList2;
+          _calculate(i,temp);
            temp.clear();
-
        }
-
+       if(_longestList != null)
         System.out.println("FINAL: " + _longestList);
+       else
+           System.out.println("N-am gasit nimic");
+
     }
 
-    private List<Integer> _calculate(int pos, List<Integer> visited)
+    private void _calculate(int pos, List<Integer> visited)
     {
        List<Integer> tempList = new ArrayList<Integer>();
         if(_m[pos][visited.get(0)] == true && visited.size() > 2) {
-            if(visited.size() > tempList.size())
-                tempList = visited;
+            visited.add(visited.get(0));
+        if(_longestList == null)
+            _longestList = new ArrayList<Integer>(visited);
+        else
+        {
+            if(_longestList.size() < visited.size() && visited.size() > 2)
+            {
+                _longestList.clear();
+                _longestList = new ArrayList<Integer>(visited);
+            }
+        }
+
+            visited.remove(visited.size()-1);
         }
         for(int i=0;i<_matrixLength;i++)
         {
@@ -52,10 +61,7 @@ public class CycleCalculator {
     if(tempList.size() != 0)
     {
         System.out.println("Cel mai lung ciclu pentru subproblema " + pos + " este " + tempList);
-    return tempList;
     }
-
-    return null;
 
 
     }

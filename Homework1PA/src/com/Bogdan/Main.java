@@ -80,7 +80,14 @@ public class Main {
         System.out.printf("%d Milliseconds.",end-start);
 /////////////////////////////////////////////////////////////BONUS////////////////////////////////////////////////////
 
-        CycleCalculator instance = new CycleCalculator(matrice.getMatrix());
+        //CycleCalculator instance = new CycleCalculator(matrice.getMatrix());
+
+
+
+        boolean[][] matrix2 = { {false,true,true,false,false},{true,false,true,true,true},{true, true,false,false,false},{false,true,false,false,true},{false,true,false,true,false} };
+
+        CycleCalculator test2 = new CycleCalculator(matrix2);
+;
 
 
     }
