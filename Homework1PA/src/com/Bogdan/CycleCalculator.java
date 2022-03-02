@@ -21,15 +21,14 @@ public class CycleCalculator {
            temp.clear();
        }
        if(_longestList != null)
-        System.out.println("FINAL: " + _longestList);
-       else
-           System.out.println("N-am gasit nimic");
+        System.out.println("\nUn ciclu cu lungimea " + (_longestList.size() -1)  + "(maxima): " +  _longestList);
+       else System.out.println("\n N-am gasit niciun ciclu");
 
     }
 
     private void _calculate(int pos, List<Integer> visited)
     {
-       List<Integer> tempList = new ArrayList<Integer>();
+
         if(_m[pos][visited.get(0)] == true && visited.size() > 2) {
             visited.add(visited.get(0));
         if(_longestList == null)
@@ -58,11 +57,6 @@ public class CycleCalculator {
 
             }
         }
-    if(tempList.size() != 0)
-    {
-        System.out.println("Cel mai lung ciclu pentru subproblema " + pos + " este " + tempList);
-    }
-
 
     }
 
