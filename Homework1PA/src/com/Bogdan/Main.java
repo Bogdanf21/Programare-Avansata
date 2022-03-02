@@ -22,7 +22,7 @@ public class Main {
     public static void homeworkPlusBonus(String[] args)
     {
         System.out.println("Running...");
-        boolean debug = false; // am scos print-urile cu asta
+        boolean debug = true; // am scos print-urile cu asta
         long start = System.currentTimeMillis(); // timp pentru ultimul punct
         int counter = 2, noOfArguments = args.length;
 
@@ -80,6 +80,7 @@ public class Main {
         System.out.printf("%d Milliseconds.",end-start);
 /////////////////////////////////////////////////////////////BONUS////////////////////////////////////////////////////
 
+        CycleCalculator instance = new CycleCalculator(matrice.getMatrix());
 
 
     }

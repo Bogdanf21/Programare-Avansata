@@ -23,7 +23,10 @@ public class Matrix {
             System.out.printf("i=%d\n",i); // doar un check sa vad la ce pas a ajuns (din 30k)
             for(int j=0; j<_size;j++)
             {
+                if(i!=j)
                 _m[i][j] = areNeighbours(strings[i], strings[j]); // 0-daca nu sunt vecini 1-daca sunt
+                else
+                    _m[i][j] = false;
                 if(_m[i][j] && i != j) // i != j sa nu il pun pe string-ul x ca fiind vecinul lui x
                     _neighbours[i].add(strings[j]);
             }
@@ -66,9 +69,9 @@ public class Matrix {
         return temp.toString();
     }
 
-    public void printLongestSequence()
-    {
-
-    }
+   public boolean[][] getMatrix()
+   {
+       return _m;
+   }
 
 }
