@@ -3,34 +3,56 @@ package com.bogdan;
 import java.util.*;
 
 public class Problem {
-    private List<Eveniment> events;
+    private List<Event> events;
     private List<Room> rooms;
 
-    public Problem(Eveniment[] events, Room[] rooms)
+    /**
+     * Constructor for Problem class.
+     *
+     * Available options:
+     * Problem() - empty
+     * Problem(Event[] events, Room[] rooms)
+     * Problem(List<Event> events, List<Room> rooms)
+     *
+     */
+    public Problem(Event[] events, Room[] rooms)
     {
-     this.events = new ArrayList<Eveniment>();
-     this.rooms = new ArrayList<Room>();
-
-        this.events=Arrays.asList(events);
-        this.rooms=Arrays.asList(rooms);
+     this.events=Arrays.asList(events);
+     this.rooms=Arrays.asList(rooms);
     }
 
-
+    /**
+     * Constructor for Problem class.
+     *
+     * Available options:
+     * Problem() - empty
+     * Problem(Event[] events, Room[] rooms)
+     * Problem(List<Event> events, List<Room> rooms)
+     *
+     */
     public Problem(){
-        this.events = new ArrayList<Eveniment>();
-        this.rooms = new ArrayList<Room>();
-    };
-
-    public Problem(ArrayList<Eveniment> eveniments, ArrayList<Room> rooms) {
-        this.events=eveniments;
+        this.events = new ArrayList<>();
+        this.rooms = new ArrayList<>();
+    }
+    /**
+     * Constructor for Problem class.
+     *
+     * Available options:
+     * Problem() - empty
+     * Problem(Event[] events, Room[] rooms)
+     * Problem(List<Event> events, List<Room> rooms)
+     *
+     */
+    public Problem(ArrayList<Event> events, ArrayList<Room> rooms) {
+        this.events= events;
         this.rooms=rooms;
     }
 
-    public void setEvents(Eveniment[] events) {
+    public void setEvents(Event[] events) {
         this.events=Arrays.asList(events);
     }
 
-    public List<Eveniment> getEvents(){return events;}
+    public List<Event> getEvents(){return events;}
 
     public List<Room> getRooms(){return rooms;}
 
@@ -38,13 +60,7 @@ public class Problem {
         this.rooms=Arrays.asList(rooms);
     }
 
-    public HashMap<String,String> computeUsedRooms()
-    {
-      HashMap<String,String> solution = new HashMap<String,String>();
-        return solution;
-    }
-
-    public void addEvent(Eveniment event)
+    public void addEvent(Event event)
     {
        this.events.add(event) ;
     }
@@ -57,9 +73,12 @@ public class Problem {
 
     @Override
     public String toString() {
-        return (new StringBuilder()
-                .append(events + "\n"))
-                .append(rooms)
-                .toString();
+
+        StringBuilder temp = new StringBuilder();
+        temp.append(events);
+        temp.append("\n");
+        temp.append(rooms);
+        return temp.toString();
+
     }
 }

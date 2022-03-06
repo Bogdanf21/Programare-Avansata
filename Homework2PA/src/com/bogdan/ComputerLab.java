@@ -5,21 +5,63 @@ public class ComputerLab extends Room{
 
     private String operatingSystem = null;
 
-    public ComputerLab(){};
-
+    /**
+     * Default ComputerLab constructor.
+     *
+     * Options:
+     *
+     * ComputerLab()
+     *
+     * ComputerLab(String name, int capacity)
+     *
+     *  ComputerLab(String name, int capacity, String operatingSystem)
+     *
+     */
+     ComputerLab(){};
+    /**
+     * Default ComputerLab constructor.
+     *
+     * Options:
+     *
+     * ComputerLab()
+     *
+     * ComputerLab(String name, int capacity)
+     *
+     *  ComputerLab(String name, int capacity, String operatingSystem)
+     *
+     */
     ComputerLab(String name, int capacity, String operatingSystem)
     {
         this.name = name;
         this.capacity = capacity;
         this.operatingSystem = operatingSystem;
     }
+    /**
+     * Default ComputerLab constructor.
+     *
+     * Options:
+     *
+     * ComputerLab()
+     *
+     * ComputerLab(String name, int capacity)
+     *
+     *  ComputerLab(String name, int capacity, String operatingSystem)
+     *
+     */
     ComputerLab(String name, int capacity)
     {
         this.name = name;
         this.capacity= capacity;
     }
 
-    public boolean canHold(Eveniment event) {
+
+    /**
+     * Override of method canHold from Room class.
+     * It verifies if the room is large enough (participantsNumber <= lectureHallCapacity) and if the event is right for this room (in this case if it is a Lab/Seminary)
+     * @param event
+     */
+    @Override
+    public boolean canHold(Event event) {
         boolean isCorrectRoomType;
 
         if(event.getName().contains("S") || event.getName().contains("L"))

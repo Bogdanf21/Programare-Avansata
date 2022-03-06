@@ -1,19 +1,53 @@
 package com.bogdan;
 
+
+/**
+ * Extension of the class: Room
+ *
+ */
 public class LectureHall extends Room {
 
 
 
 private boolean hasProjector = false;
 
-    public LectureHall(){};
 
+    /**
+     * Constructor for Lecture Hall.
+     *
+     * Options:
+     *
+     *  <p> LectureHall(){}</p>
+     *  <p>LectureHall(String name, int capacity)</p>
+     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
+     *
+     */
+    public LectureHall(){};
+    /**
+     * Constructor for Lecture Hall.
+     *
+     * Options:
+     *
+     *  <p> LectureHall(){}</p>
+     *  <p>LectureHall(String name, int capacity)</p>
+     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
+     *
+     */
     public LectureHall(String name, int capacity,boolean hasProjector) {
         this.name = name;
         this.capacity = capacity;
         this.hasProjector = hasProjector;
     }
-
+    /**
+     * Constructor for Lecture Hall.
+     *
+     * Options:
+     *
+     *  <p> LectureHall(){}</p>
+     *  <p>LectureHall(String name, int capacity)</p>
+     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
+     *
+     */
     public LectureHall(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
@@ -52,8 +86,13 @@ private boolean hasProjector = false;
 
     }
 
+    /**
+     * Override of method canHold from Room class.
+     * It verifies if the room is large enough (participantsNumber <= lectureHallCapacity) and if the event is right for this room (in this case if it is a course)
+     * @param event
+     */
     @Override
-    public boolean canHold(Eveniment event) {
+    public boolean canHold(Event event) {
         boolean isCorrectRoomType;
 
         if(event.getName().contains("C"))

@@ -1,13 +1,19 @@
 package com.bogdan;
 
-import java.util.HashMap;
 import java.util.List;
 
+
+/**
+ * A class that is returned by Algorithm child classes.
+ *
+ * Usage:
+ * Solution(Room[] assignment,List<Event> events) - where assignment[i] = what room received the event with index i
+ */
 public class Solution {
   private final Room[] assignment;
-  private final List<Eveniment> events;
+  private final List<Event> events;
 
-    Solution(Room[] assignment,List<Eveniment> events){
+    Solution(Room[] assignment,List<Event> events){
         this.events = events;
         this.assignment = assignment;
     };
@@ -17,7 +23,7 @@ public class Solution {
        StringBuilder tempString = new StringBuilder();
 
        int roomNo = 0;
-        for(Eveniment tempEvent : events)
+        for(Event tempEvent : events) // concatenation of every event with the specific room
         {
             tempString.append(tempEvent.getName() + " -> " + assignment[roomNo].name + "\n");
             roomNo++;

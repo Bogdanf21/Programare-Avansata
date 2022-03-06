@@ -1,5 +1,11 @@
 package com.bogdan;
 
+
+/**
+ * Abstract class implemented by LectureHall and ComputerLab. It should not be instantiated.
+ *
+ * method canHold should be Implemented, and it will return a boolean value.
+ */
 public abstract class Room{
     protected String name = "Unknown";
     protected int capacity = -1;
@@ -20,57 +26,11 @@ public abstract class Room{
         this.name = name;
     }
 
-    public abstract boolean canHold(Eveniment event);
+    public abstract boolean canHold(Event event);
 
 }
 
 
-
-
-
-/*
-public class Room {
-    private String name;
-    private int capacity;
-    private RoomType type;
-
-
-    public Room(String name,int capacity, RoomType type) {
-        this.name = name;
-        this.type = type;
-        this.capacity = capacity;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Room)) {
-            return false;
-        }
-        Room other = (Room) obj;
-        return name.equals(other.name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public RoomType getType() {
-        return type;
-    }
-
-    public void setType(RoomType type) {
-        this.type = type;
-    }
-
-
-
-
-}
-*/
 
 
 
