@@ -11,7 +11,6 @@ public class Eveniment {
 
 
 
-
     public Eveniment(String name, int participantsNumber, int startTime, int endTime){
         this.name = name;
         this.participantsNumber = participantsNumber;
@@ -66,5 +65,12 @@ public class Eveniment {
     return temp.toString();
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Room)) {
+            return false;
+        }
+       Eveniment other = (Eveniment) obj;
+        return name.equals(other.name);
+    }
 }

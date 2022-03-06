@@ -17,12 +17,25 @@ ArrayList<Eveniment> eveniments = new ArrayList<Eveniment>(
 );
 
 ArrayList<Room> rooms = new ArrayList<Room>();
-rooms.add(new Room("401", 30, RoomType.COMPUTER_LAB));
-rooms.add(new Room("403", 30, RoomType.COMPUTER_LAB));
-rooms.add(new Room("405", 30, RoomType.COMPUTER_LAB));
-rooms.add(new Room("403", 30, RoomType.COMPUTER_LAB));
 
-        System.out.println(rooms);
-        System.out.println(eveniments);
+rooms.add(new ComputerLab("401", 30));
+rooms.add(new ComputerLab("403", 30));
+rooms.add(new ComputerLab("405", 30));
+rooms.add(new LectureHall("309", 30));
+
+System.out.println(rooms);
+System.out.println(eveniments);
+
+Problem pb = new Problem();
+Problem pb2 = new Problem(eveniments,rooms);
+pb.addEvent(new Eveniment("L2",30,8,10));
+
+        System.out.println(pb);
+        System.out.println(pb2);
+
+        Algorithm greedy = new GreedyAlgorithm(pb);
+
+
+
     }
 }

@@ -1,5 +1,34 @@
 package com.bogdan;
 
+public abstract class Room{
+    protected String name = "Unknown";
+    protected int capacity = -1;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public abstract boolean canHold(Eveniment event);
+
+}
+
+
+
+
+
+/*
 public class Room {
     private String name;
     private int capacity;
@@ -9,6 +38,7 @@ public class Room {
     public Room(String name,int capacity, RoomType type) {
         this.name = name;
         this.type = type;
+        this.capacity = capacity;
     }
 
     @Override
@@ -36,14 +66,11 @@ public class Room {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return (
-                (new StringBuilder().append(this.name))
-                        .append(" " + this.type.toString() ))
-                        .toString();
-    }
+
+
+
 }
+*/
 
 
 
