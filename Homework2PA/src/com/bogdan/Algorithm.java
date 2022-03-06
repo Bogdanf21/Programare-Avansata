@@ -7,5 +7,5 @@ abstract class Algorithm {
    protected Problem problem;
 
 
-  public abstract HashMap<String,String> solve(Problem pb);
+  public abstract Solution solve();
 }

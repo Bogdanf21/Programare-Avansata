@@ -14,39 +14,44 @@ public class GreedyAlgorithm extends Algorithm {
 GreedyAlgorithm(Problem problem)
 {
     this.problem = problem;
+
+
 }
 
 
     @Override
-    public HashMap<String, String> solve(Problem pb) {
+    public Solution solve() {
 
-                return null;
-}
-/*    List<Eveniment> events = problem.getEvents();
+        List<Room> rooms = problem.getRooms();
 
-    List<Room> rooms = problem.getRooms();
+        List<Eveniment> events = problem.getEvents();
 
-    List<Room> assignment = new ArrayList<Room>();
+        Room[] assignment = new Room[events.size()];
 
-   for(Eveniment tempEvent: events)
-   {
-
-       for(Room tempRoom : rooms)
+        int eventPos = 0;
+        int minimumStartTime;
+        for(Room tempRoom : rooms)
         {
+            minimumStartTime = 8;
+            eventPos = 0;
+            for(Eveniment tempEvent : events)
+            {
+                if(assignment[eventPos] == null)
+                    if(tempRoom.canHold(tempEvent) && tempEvent.getStartTime() >= minimumStartTime)
+                    {
+                        assignment[eventPos] = tempRoom;
+                        minimumStartTime=tempEvent.getEndTime();
+                    }
 
+
+                eventPos++;
+            }
         }
-   }
-
-        return null;
-    }
-
-
-    private boolean isOccupiedAt(List<Room> assignment, Room room, int start,int end)
-    {
-       for(Room temp : assignment)
-       {
-           if(room == temp)
-               if(start)
-       }
-    }*/
+       /* System.out.println("RESULT");
+        for(int i=0;i<assignment.length;i++)
+        {
+            System.out.println(assignment[i] + ",  ");
+        }*/
+        return new Solution(assignment,events);
+}
 }

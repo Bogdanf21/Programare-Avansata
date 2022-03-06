@@ -22,7 +22,7 @@ public class ComputerLab extends Room{
     public boolean canHold(Eveniment event) {
         boolean isCorrectRoomType;
 
-        if(event.getName().contains("S") && event.getName().contains("L"))
+        if(event.getName().contains("S") || event.getName().contains("L"))
             isCorrectRoomType = true;
         else
             isCorrectRoomType = false;

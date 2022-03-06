@@ -1,15 +1,29 @@
 package com.bogdan;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class Solution {
-    HashMap<String,String> solution;
+  private final Room[] assignment;
+  private final List<Eveniment> events;
 
-    Solution(HashMap<String,String> solution){this.solution = solution;};
+    Solution(Room[] assignment,List<Eveniment> events){
+        this.events = events;
+        this.assignment = assignment;
+    };
 
     @Override
     public String toString() {
-       return solution.toString();
+       StringBuilder tempString = new StringBuilder();
+
+       int roomNo = 0;
+        for(Eveniment tempEvent : events)
+        {
+            tempString.append(tempEvent.getName() + " -> " + assignment[roomNo].name + "\n");
+            roomNo++;
+        }
+
+        return tempString.toString();
     }
 
 
