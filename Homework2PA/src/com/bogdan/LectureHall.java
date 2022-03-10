@@ -3,50 +3,50 @@ package com.bogdan;
 
 /**
  * Extension of the class: Room
- *
  */
 public class LectureHall extends Room {
 
 
-
-private boolean hasProjector = false;
+    private boolean hasProjector = false;
 
 
     /**
      * Constructor for Lecture Hall.
-     *
+     * <p>
      * Options:
      *
-     *  <p> LectureHall(){}</p>
-     *  <p>LectureHall(String name, int capacity)</p>
-     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
-     *
+     * <p> LectureHall(){}</p>
+     * <p>LectureHall(String name, int capacity)</p>
+     * <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
      */
-    public LectureHall(){};
+    public LectureHall() {
+    }
+
+    ;
+
     /**
      * Constructor for Lecture Hall.
-     *
+     * <p>
      * Options:
      *
-     *  <p> LectureHall(){}</p>
-     *  <p>LectureHall(String name, int capacity)</p>
-     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
-     *
+     * <p> LectureHall(){}</p>
+     * <p>LectureHall(String name, int capacity)</p>
+     * <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
      */
-    public LectureHall(String name, int capacity,boolean hasProjector) {
+    public LectureHall(String name, int capacity, boolean hasProjector) {
         this.name = name;
         this.capacity = capacity;
         this.hasProjector = hasProjector;
     }
+
     /**
      * Constructor for Lecture Hall.
-     *
+     * <p>
      * Options:
      *
-     *  <p> LectureHall(){}</p>
-     *  <p>LectureHall(String name, int capacity)</p>
-     *  <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
-     *
+     * <p> LectureHall(){}</p>
+     * <p>LectureHall(String name, int capacity)</p>
+     * <p>LectureHall(String name, int capacity,boolean hasProjector)</p>
      */
     public LectureHall(String name, int capacity) {
         this.name = name;
@@ -58,19 +58,18 @@ private boolean hasProjector = false;
     }
 
     public void addProjector() {
-        if(!hasProjector)
+        if (!hasProjector)
             this.hasProjector = true;
         else
             System.out.println("Warning: hasProjector is already false");
     }
 
     public void removeProjector() {
-        if(hasProjector)
+        if (hasProjector)
             this.hasProjector = false;
         else
             System.out.println("Warning: hasProjector is already true");
     }
-
 
 
     @Override
@@ -79,7 +78,7 @@ private boolean hasProjector = false;
         temp.append(name + "(");
         temp.append("cap=" + capacity);
         temp.append(", Lecture Hall");
-        if(hasProjector)
+        if (hasProjector)
             temp.append(", Projector: yes");
         temp.append(")");
         return temp.toString();
@@ -89,17 +88,17 @@ private boolean hasProjector = false;
     /**
      * Override of method canHold from Room class.
      * It verifies if the room is large enough (participantsNumber <= lectureHallCapacity) and if the event is right for this room (in this case if it is a course)
+     *
      * @param event
      */
     @Override
     public boolean canHold(Event event) {
         boolean isCorrectRoomType;
 
-        if(event.getName().contains("C"))
+        if (event.getName().contains("C"))
             isCorrectRoomType = true;
         else
             isCorrectRoomType = false;
-
 
 
         return event.getParticipantsNumber() <= this.capacity && isCorrectRoomType;

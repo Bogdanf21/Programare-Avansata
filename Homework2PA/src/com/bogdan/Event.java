@@ -9,46 +9,44 @@ public class Event {
     /**
      * Constructor for Event class.
      * Available options:
-     *
+     * <p>
      * Event() - empty event
-     *
+     * <p>
      * Event(int participantsNumber, int startTime, int endTime) - no name given
-     *
+     * <p>
      * Event(String name, int participantsNumber, int startTime, int endTime)
-     *
-     *
      */
-    public Event() {}
+    public Event() {
+    }
+
     /**
      * Constructor for Event class.
      * Available options:
-     *
+     * <p>
      * Event() - empty event
-     *
+     * <p>
      * Event(int participantsNumber, int startTime, int endTime) - no name given
-     *
+     * <p>
      * Event(String name, int participantsNumber, int startTime, int endTime)
-     *
-     *
      */
-    public Event(String name, int participantsNumber, int startTime, int endTime){
+    public Event(String name, int participantsNumber, int startTime, int endTime) {
         this.name = name;
         this.participantsNumber = participantsNumber;
         this.startTime = startTime;
         this.endTime = endTime;
-    } /**
+    }
+
+    /**
      * Constructor for Event class.
      * Available options:
-     *
+     * <p>
      * Event() - empty event
-     *
+     * <p>
      * Event(int participantsNumber, int startTime, int endTime) - no name given
-     *
+     * <p>
      * Event(String name, int participantsNumber, int startTime, int endTime)
-     *
-     *
      */
-    public Event(int participantsNumber, int startTime, int endTime){
+    public Event(int participantsNumber, int startTime, int endTime) {
         this.participantsNumber = participantsNumber;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -56,7 +54,6 @@ public class Event {
 
     /**
      * Getter for name
-     *
      */
     public String getName() {
         return name;
@@ -64,7 +61,8 @@ public class Event {
 
 
     /**
-     *Setter for name
+     * Setter for name
+     *
      * @param name
      */
     public void setName(String name) {
@@ -72,7 +70,8 @@ public class Event {
     }
 
     /**
-     *Getter for participants number
+     * Getter for participants number
+     *
      * @return
      */
     public int getParticipantsNumber() {
@@ -81,6 +80,7 @@ public class Event {
 
     /**
      * Setter for participants number
+     *
      * @param participantsNumber
      */
     public void setParticipantsNumber(int participantsNumber) {
@@ -89,6 +89,7 @@ public class Event {
 
     /**
      * Getter for start time
+     *
      * @return startTime
      */
     public int getStartTime() {
@@ -97,6 +98,7 @@ public class Event {
 
     /**
      * Setter for start time
+     *
      * @param startTime
      */
     public void setStartTime(int startTime) {
@@ -105,13 +107,16 @@ public class Event {
 
     /**
      * Getter for end time
+     *
      * @return endTime
      */
     public int getEndTime() {
         return endTime;
     }
+
     /**
      * Setter for start time
+     *
      * @param endTime
      */
     public void setEndTime(int endTime) {
@@ -119,12 +124,12 @@ public class Event {
     }
 
     public String toString() {
-       StringBuilder temp = new StringBuilder();
-       temp.append(name + "(");
-       temp.append("size=" + participantsNumber);
+        StringBuilder temp = new StringBuilder();
+        temp.append(name + "(");
+        temp.append("size=" + participantsNumber);
         temp.append(", start=" + startTime);
         temp.append(", end=" + endTime + ")");
-    return temp.toString();
+        return temp.toString();
     }
 
     @Override
@@ -132,7 +137,7 @@ public class Event {
         if (obj == null || !(obj instanceof Room)) {
             return false;
         }
-       Event other = (Event) obj;
+        Event other = (Event) obj;
         return name.equals(other.name);
     }
 }

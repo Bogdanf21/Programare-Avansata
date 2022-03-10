@@ -3,10 +3,10 @@ package com.bogdan;
 
 /**
  * Abstract class implemented by LectureHall and ComputerLab. It should not be instantiated.
- *
+ * <p>
  * method canHold should be Implemented, and it will return a boolean value.
  */
-public abstract class Room{
+public abstract class Room {
     protected String name = "Unknown";
     protected int capacity = -1;
 
