@@ -3,25 +3,30 @@ import Identifiable.java.Identifiable;
 import Storage.java.Storage;
 
 
-public class Switcher extends Node implements Identifiable, Storage {
+public class Switcher extends Node {
     private String address;
     private int storageCapacity;
 
-    @Override
-    public String getAddress() {
-        return address;
+    public Switcher(String name)
+    {
+        this.setName(name);
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    @Override
-    public int getStorageCapacity() {
-        return storageCapacity;
-    }
-
     public void setStorageCapacity(int storageCapacity) {
         this.storageCapacity = storageCapacity;
+    }
+
+    public void printRoutes(){
+        System.out.println("\n");
+        System.out.println(this.getRoutes());
+    }
+
+    @Override
+    public String toString() {
+       return this.getName();
     }
 }

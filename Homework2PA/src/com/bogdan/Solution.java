@@ -1,5 +1,6 @@
 package com.bogdan;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,9 +17,12 @@ public class Solution {
     Solution(Room[] assignment, List<Event> events) {
         this.events = events;
         this.assignment = assignment;
-    }
+    };
 
-    ;
+
+
+
+
 
     @Override
     public String toString() {

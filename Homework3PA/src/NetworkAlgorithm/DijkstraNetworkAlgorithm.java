@@ -1,4 +1,4 @@
-package com.bogdan;
+package NetworkAlgorithm;
 
 import Identifiable.java.Identifiable;
 import Implementations.Node;

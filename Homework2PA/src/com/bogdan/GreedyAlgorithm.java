@@ -1,6 +1,6 @@
 package com.bogdan;
 
-import java.util.Collections;
+
 import java.util.Comparator;
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class GreedyAlgorithm extends Algorithm {
 
         int eventsAssigned = 0; // so I know if all the events are assigned
 
-        int eventPos = 0;
+        int eventPos;
         int minimumStartTime;
         for (Room tempRoom : rooms) // take one room, fill it with as many events as possible
         {
@@ -69,6 +69,8 @@ public class GreedyAlgorithm extends Algorithm {
                     assignment[i] = unassigned;
             }
         }
+
+
         return new Solution(assignment, events); // solution object to be returned
     }
 }
