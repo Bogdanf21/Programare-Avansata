@@ -14,9 +14,9 @@ public class Main {
     Node v4 =new Switcher("Switch B");
     Node v5 = new Router("Router B","1.1.1.1.1");
     Node v6 = new Computer("computerB", "2.2.2.2.2", 256);
-    v1.setCost(v2,11,0.5F);
-    v1.setCost(v3,51,0.6F);
-    v2.setCost(v3,21,0.75F);
+    v1.setCost(v2,10,0.5F);
+    v1.setCost(v3,50,0.6F);
+    v2.setCost(v3,20,0.75F);
     v2.setCost(v4,20,1F);
     v2.setCost(v5,20,0.75F);
     v3.setCost(v4,10,0.5F);
@@ -31,6 +31,7 @@ public class Main {
         n1.printIdentifiableRoutes();
         System.out.println("\n\n");
         System.out.println("\n\n");
+
 
         n1.printSuccessRateFromAtoB(v1,v6);
 

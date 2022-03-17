@@ -81,7 +81,7 @@ public class Network {
          temp.append(" \n To \n");
          temp.append(B);
          temp.append("\n is ");
-         temp.append(response);
+         temp.append(response*100+ "%");
             System.out.println(temp);
         }
         else
