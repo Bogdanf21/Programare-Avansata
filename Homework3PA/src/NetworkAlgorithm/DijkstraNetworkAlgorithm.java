@@ -1,6 +1,8 @@
 package com.bogdan;
 
+import Identifiable.java.Identifiable;
 import Implementations.Node;
+import Implementations.NodeStatistics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,15 +11,11 @@ import java.util.Map;
 
 public class DijkstraNetworkAlgorithm {
 
-    private boolean singleNodeSolutionCalled; // used to know what to print (if this is false, then I will print all lists, otherwise I will print the start node and the costs)
-
     private List<Node> nodes;
 
-    private Node lastSolvedNode;
 
-    private Map<Node,Integer> solutionForSingleNode;
 
-    private List<Map<Node,Integer>> solution;
+    private List<Map<Node,Integer>> solution; // used to store multiple solutions
 
 
 
@@ -52,18 +50,18 @@ public class DijkstraNetworkAlgorithm {
         {
             processedNodes.put(currentNode,true);
             int costFromStartToCurrentNode = nodesCost.get(currentNode);
-            for(Map.Entry<Node,Integer> currentNodeNeighbour : currentNode.getCosts().entrySet()) // Iterate through all neighbours of current node
+            for(Map.Entry<Node, NodeStatistics> currentNodeNeighbour : currentNode.getCosts().entrySet()) // Iterate through all neighbours of current node
             {
 
 
                 if(!nodesCost.containsKey(currentNodeNeighbour.getKey())) // if there is no path from the startNode to currentNodeNeighbour then add it with the cost of currentNode + currentNode to neighbour
                 {
-                    int costFromCurrentNodeToNeighbour = currentNodeNeighbour.getValue();
+                    int costFromCurrentNodeToNeighbour = currentNodeNeighbour.getValue().getNodeCost();
                     nodesCost.put(currentNodeNeighbour.getKey(),costFromStartToCurrentNode + costFromCurrentNodeToNeighbour);
                 } // add in nodesCost  the currentNodeNeighbour cost (from currentNode to neighbourNode) + currentNodeCost (from startNode to currentNode)
                 else //verify if oldCost is higher than the possible one
                 {
-                    int possibleLowerCost =  currentNodeNeighbour.getValue() + nodesCost.get(currentNode);
+                    int possibleLowerCost =  currentNodeNeighbour.getValue().getNodeCost() + nodesCost.get(currentNode);
                     int oldCost = nodesCost.get(currentNodeNeighbour.getKey());
                     if(possibleLowerCost < oldCost)
                         nodesCost.replace(currentNodeNeighbour.getKey(),possibleLowerCost);
@@ -89,10 +87,6 @@ public class DijkstraNetworkAlgorithm {
 
         }
 
-
-        this.lastSolvedNode = startNode;
-        this.solutionForSingleNode = nodesCost;
-
         return nodesCost;
     }
 
@@ -101,7 +95,56 @@ public class DijkstraNetworkAlgorithm {
         List<Map<Node,Integer>> toBeReturned = new ArrayList<>();
         for(int i=0;i<nodes.size();i++)
             toBeReturned.add(solveForNode(this.nodes.get(i)));
+
+        solution = toBeReturned;
         return toBeReturned;
     }
 
+    public String listIdentifiableSolutions()
+    {
+        StringBuilder temp = new StringBuilder();
+
+        if(solution == null)
+            System.out.println("Solution not called");
+        else
+        {
+            for(int i=0;i<nodes.size();i++) {
+               if(this.nodes.get(i) instanceof Identifiable) {
+                    temp.append("\nFor node: ");
+                    temp.append(this.nodes.get(i));
+                    temp.append(" to:\n{");
+                    for (Map.Entry<Node, Integer> iterator : solution.get(i).entrySet())
+                        if (iterator.getKey() instanceof Identifiable && iterator.getValue() != 0) {
+                            temp.append(iterator.getKey());
+                            temp.append("=");
+                            temp.append(iterator.getValue());
+                            temp.append(",  ");
+                        }
+                   temp.append("}\n");
+
+
+                }
+            }
+
+        }
+        System.out.println(temp);
+        return temp.toString();
+    }
+    @Override
+    public String toString() {
+        StringBuilder temp = new StringBuilder();
+
+        if(solution == null)
+            return "Solution not called.";
+            else
+        {
+            for(int i=0;i<nodes.size();i++) {
+                temp.append("\nFor node: ");
+                temp.append(this.nodes.get(i));
+                temp.append(" to:\n");
+                temp.append(solution.get(i));
+            }
+        }
+        return temp.toString();
+    }
 }
