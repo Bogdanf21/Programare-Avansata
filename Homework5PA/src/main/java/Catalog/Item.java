@@ -7,6 +7,8 @@ public abstract class Item {
     protected String title;
     protected String location;
     protected Map<String,String> properties;
+
+
     protected Item(Map<String,String> properties)
     {
         try{
@@ -24,6 +26,7 @@ public abstract class Item {
         }
     }
 
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Item{");
@@ -33,5 +36,37 @@ public abstract class Item {
         sb.append(", properties=").append(properties);
         sb.append('}');
         return sb.toString();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Map<String, String> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Map<String, String> properties) {
+        this.properties = properties;
     }
 }
