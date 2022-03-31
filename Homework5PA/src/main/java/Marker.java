@@ -22,7 +22,7 @@ public class Marker {
         configuration.setFallbackOnNullLoopVariable(false);
 
 
-        Map<String,Object> root = new HashMap();
+        Map<String,Object> root = new HashMap<>();
         root.put("catalog", c.getCatalog());
         /* Get the template (uses cache internally) */
         Template temp = configuration.getTemplate("test.ftl");

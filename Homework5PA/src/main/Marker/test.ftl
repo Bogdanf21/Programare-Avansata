@@ -16,6 +16,12 @@
         <#list item.getProperties() as key,value>
             <p>${key}: ${value}</p>
         </#list>
+            <b>Concepts:</b>
+            <ul>
+                <#list item.getConcepts() as concept>
+                    <li>${concept}</li>
+                </#list>
+            </ul>
         </li>
     </#list>
 </ul>

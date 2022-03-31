@@ -1,5 +1,9 @@
 import Catalog.Catalog;
-import Catalog.CommandInterfaces.CatalogUtil;
+import Catalog.CommandInterfaces.AddCommand;
+import Catalog.CommandInterfaces.ConceptRelated.AddRandomConcepts;
+import Catalog.CommandInterfaces.ConceptRelated.PrintBonusPart;
+import Catalog.CommandInterfaces.SaveCommand;
+import Catalog.CommandInterfaces.ViewCommand;
 import Catalog.Item;
 import Catalog.ItemTypes.Book;
 import com.github.javafaker.Faker;
@@ -38,8 +42,8 @@ public class Main {
         Item i2 = new Book(m2);
 
        Catalog catalog = new Catalog();
-        CatalogUtil.add(catalog,i1);
-        CatalogUtil.add(catalog,i2);
+        AddCommand.execute(catalog,i1);
+        AddCommand.execute(catalog,i2);
 
 
         ArrayList<Item> fakeItems = IntStream.rangeClosed(0,9).
@@ -52,9 +56,9 @@ public class Main {
                         }).collect(Collectors.toMap( data -> data[0], data -> data[1]))
                 )).collect(Collectors.toCollection(ArrayList::new));
 
-        CatalogUtil.add(catalog,fakeItems);
+        AddCommand.execute(catalog,fakeItems);
         try {
-            CatalogUtil.save(catalog, PATH + "catalog.json");
+            SaveCommand.execute(catalog, PATH + "catalog.json");
         }
         catch(IOException e)
         {
@@ -63,14 +67,14 @@ public class Main {
 
 
         try {
-            CatalogUtil.view(catalog, "knuth67");
-            CatalogUtil.view(catalog, "java17");
+            ViewCommand.execute(catalog, "knuth67");
+            ViewCommand.execute(catalog, "java17");
         }
-        catch(CatalogUtil.ItemNotFoundException e)
+        catch(ViewCommand.ItemNotFoundException e)
         {
             System.out.println(e.getMessage());
-        }
-
+        }AddRandomConcepts.execute(catalog);
     Marker.generate(catalog);
+        PrintBonusPart.execute(catalog);
     }
 }

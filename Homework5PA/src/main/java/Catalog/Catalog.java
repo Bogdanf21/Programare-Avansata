@@ -1,9 +1,11 @@
 package Catalog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Catalog {
    private ArrayList<Item> catalog = new ArrayList<Item>();
+   private List<String> allConcepts = new ArrayList<>();
 
    public Catalog(){};
    public Catalog(ArrayList<Item> catalog)
@@ -27,6 +29,14 @@ public class Catalog {
         return item;
     }
 
+    public List<String> getAllConcepts() {
+        return allConcepts;
+    }
+
+    public void setAllConcepts(List<String> allConcepts) {
+        this.allConcepts = allConcepts;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Catalog{");
@@ -34,4 +44,5 @@ public class Catalog {
         sb.append('}');
         return sb.toString();
     }
+
 }
