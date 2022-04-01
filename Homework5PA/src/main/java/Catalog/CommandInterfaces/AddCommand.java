@@ -4,12 +4,30 @@ import Catalog.Catalog;
 import Catalog.Item;
 import java.util.ArrayList;
 
-public class AddCommand {
-    public static void execute(Catalog catalog, Item item) {
-        catalog.getCatalog().add(item);
+public class AddCommand implements Command {
+    Catalog catalog;
+    Item item = null;
+    ArrayList<Item> itemArrayList = null;
+    public AddCommand(Catalog catalog, Item item)
+    {
+        this.catalog = catalog;
+        this.item = item;
+    }
+   public AddCommand(Catalog catalog, ArrayList<Item> itemArrayList)
+    {
+        this.catalog = catalog;
+        this.itemArrayList = itemArrayList;
     }
 
-    public static void execute(Catalog catalog, ArrayList<Item> items) {
-        items.forEach(item -> execute(catalog,item));
+    public void execute() {
+        if(item == null)
+            itemArrayList.forEach(i -> addOneItem(i));
+        else
+            catalog.getCatalog().add(item);
     }
+
+   public void addOneItem(Item i) {
+        this.catalog.getCatalog().add(i);
+   }
 }
+

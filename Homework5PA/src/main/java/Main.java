@@ -1,9 +1,7 @@
 import Catalog.Catalog;
-import Catalog.CommandInterfaces.AddCommand;
+import Catalog.CommandInterfaces.*;
 import Catalog.CommandInterfaces.ConceptRelated.AddRandomConcepts;
-import Catalog.CommandInterfaces.ConceptRelated.PrintBonusPart;
-import Catalog.CommandInterfaces.SaveCommand;
-import Catalog.CommandInterfaces.ViewCommand;
+import Catalog.CommandInterfaces.ConceptRelated.ReportCommand;
 import Catalog.Item;
 import Catalog.ItemTypes.Book;
 import com.github.javafaker.Faker;
@@ -19,8 +17,7 @@ import java.util.stream.Stream;
 
 public class Main {
     static final String PATH = "C:\\Users\\Bogdanel\\Documents\\IdeaProjects\\PA\\Homework5PA\\";
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws LoadCommand.InvalidCatalogException, IOException {
         Faker faker = new Faker();
 
         Map<String,String> m1 = new HashMap<>();
@@ -42,8 +39,9 @@ public class Main {
         Item i2 = new Book(m2);
 
        Catalog catalog = new Catalog();
-        AddCommand.execute(catalog,i1);
-        AddCommand.execute(catalog,i2);
+       Command add = new AddCommand(catalog,
+               new ArrayList<Item>() {{add(i1); add(i2);}});
+        add.execute();
 
 
         ArrayList<Item> fakeItems = IntStream.rangeClosed(0,9).
@@ -56,25 +54,46 @@ public class Main {
                         }).collect(Collectors.toMap( data -> data[0], data -> data[1]))
                 )).collect(Collectors.toCollection(ArrayList::new));
 
-        AddCommand.execute(catalog,fakeItems);
+        add = new AddCommand(catalog, fakeItems);
+        add.execute();
+
+
         try {
-            SaveCommand.execute(catalog, PATH + "catalog.json");
+            Command save = new SaveCommand(catalog, PATH + "catalog.json");
+            save.execute();
         }
         catch(IOException e)
         {
             System.out.println(e.getMessage());
+        } catch (LoadCommand.InvalidCatalogException e) {
+            e.printStackTrace();
         }
 
 
-        try {
-            ViewCommand.execute(catalog, "knuth67");
-            ViewCommand.execute(catalog, "java17");
-        }
-        catch(ViewCommand.ItemNotFoundException e)
-        {
-            System.out.println(e.getMessage());
-        }AddRandomConcepts.execute(catalog);
-    Marker.generate(catalog);
-        PrintBonusPart.execute(catalog);
+
+        Command view = new ViewCommand(catalog, "knuth67");
+        view.execute();
+        view = new ViewCommand(catalog, "java17");
+        view.execute();
+
+
+        AddRandomConcepts a = new AddRandomConcepts(catalog);
+        catalog = a.execute();
+
+
+
+
+
+try{
+    Command report = new ReportCommand(catalog);
+    report.execute();
+//    Command p = new PrintBonusPart(catalog);
+//    p.execute(); Nu am reusit asta, imi da o eroare jgrapht dar obiectele mele accepta concepte (sa fie afisate si in report etc.)
+
+    }
+catch(Exception e)
+{
+    System.out.println(e.getMessage());
+}
     }
 }

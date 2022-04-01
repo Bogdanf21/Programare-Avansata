@@ -6,13 +6,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public class LoadCommand {
-    public static Catalog execute(String path) throws IOException,InvalidCatalogException {
+public class LoadCommand implements Command{
+    Catalog catalog;
+    String path;
+    public LoadCommand(Catalog c,String path)
+    {
+        this.catalog = c;
+        this.path = path;
+    }
+
+    public void execute() throws IOException,InvalidCatalogException {
         ObjectMapper objectMapper = new ObjectMapper();
         Catalog catalog = objectMapper.readValue(
                 new File(path),
                 Catalog.class);
-        return catalog;
     }
 
     public static class InvalidCatalogException extends Exception {

@@ -4,9 +4,16 @@ import Catalog.Catalog;
 
 public class ListCommand implements Command{
 
-    public void execute(Catalog c) {
+    Catalog catalog;
+
+    public ListCommand(Catalog c)
+    {
+        this.catalog = c;
+    }
+
+    public void execute() {
         StringBuilder builder = new StringBuilder();
-        c.getCatalog().forEach(i -> {
+        catalog.getCatalog().forEach(i -> {
                     builder.append("Type = ").append(String.valueOf(i)).append(" ID = ").append(i.getId());
                     builder.append(" Title = ").append(i.getLocation());
                     builder.append(" Location = ").append(i.getLocation());

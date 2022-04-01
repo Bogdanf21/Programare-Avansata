@@ -8,13 +8,25 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
-public class ViewCommand {
+public class ViewCommand implements Command{
+
+
+    Catalog catalog;
+    String id;
+    public ViewCommand(Catalog catalog, String id)
+    {
+        this.catalog = catalog;
+        this.id = id;
+    }
     static final String PATH = "C:\\Users\\Bogdanel\\Documents\\IdeaProjects\\PA\\Homework5PA\\";
-    public static void execute(Catalog catalog, String id) throws ItemNotFoundException {
+    public void execute(){
         try {
-            SaveCommand.execute(catalog, PATH + "catalog.json");
+            Command save = new SaveCommand(catalog, PATH + "catalog.json");
+           save.execute();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        } catch (LoadCommand.InvalidCatalogException e) {
+            e.printStackTrace();
         }
         //open with desktop
         try {
@@ -42,7 +54,7 @@ public class ViewCommand {
             }
 
         }   catch (ItemNotFoundException e) {
-            throw new ItemNotFoundException(new Exception());
+            System.out.println("ITEM NOT FOUND");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

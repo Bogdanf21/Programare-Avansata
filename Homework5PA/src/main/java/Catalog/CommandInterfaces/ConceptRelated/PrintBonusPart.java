@@ -1,6 +1,7 @@
 package Catalog.CommandInterfaces.ConceptRelated;
 
 import Catalog.Catalog;
+import Catalog.CommandInterfaces.Command;
 import Catalog.Item;
 import org.jgrapht.Graph;
 import org.jgrapht.alg.matching.HopcroftKarpMaximumCardinalityBipartiteMatching;
@@ -10,8 +11,17 @@ import org.jgrapht.graph.SimpleGraph;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PrintBonusPart {
-    public static void execute(Catalog catalog) {
+public class PrintBonusPart implements Command {
+    private Catalog catalog;
+
+
+
+    public PrintBonusPart(Catalog catalog)
+    {
+        this.catalog = catalog;
+    }
+
+    public void execute() {
 
         Set<Item> itemSet = new HashSet<>(catalog.getCatalog());
         Set<String> conceptSet = new HashSet<>(catalog.getAllConcepts());

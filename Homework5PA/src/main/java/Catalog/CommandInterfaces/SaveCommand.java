@@ -7,7 +7,16 @@ import java.io.File;
 import java.io.IOException;
 
 public class SaveCommand implements Command {
-    public static void execute(Catalog catalog, String path) throws IOException
+    private Catalog catalog;
+    private String path;
+
+    public SaveCommand(Catalog catalog, String path)
+    {
+        this.catalog = catalog;
+        this.path = path;
+    }
+
+    public void execute() throws IOException
     {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.writeValue(
