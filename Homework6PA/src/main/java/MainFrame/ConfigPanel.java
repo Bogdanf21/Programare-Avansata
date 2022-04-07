@@ -34,6 +34,8 @@ public class ConfigPanel extends JPanel {
 
     private void createButtonOnClick()
     {
+
+        frame.updateCanvasSize();
     }
 
     public int getRows()

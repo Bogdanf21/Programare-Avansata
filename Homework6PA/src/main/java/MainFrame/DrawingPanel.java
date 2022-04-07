@@ -1,5 +1,8 @@
 package MainFrame;
 
+import BackEnd.BoardLogic;
+import BackEnd.Stick;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -8,6 +11,8 @@ import static sun.tools.jconsole.OutputViewer.init;
 
 
 public class DrawingPanel extends JPanel {
+    private final BasicStroke regular = new BasicStroke();
+    private final BasicStroke bold = new BasicStroke(5);
     private final MainFrame frame;
     int rows, cols;
     int canvasWidth = 400, canvasHeight = 400;
@@ -38,8 +43,11 @@ public class DrawingPanel extends JPanel {
         Graphics2D g = (Graphics2D) graphics;
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, canvasWidth, canvasHeight);
+        g.setStroke(regular);
         paintGrid(g);
-        //paintSticks(g);
+        g.setStroke(bold);
+        paintSticks(g);
+        g.setStroke(regular);
         //paintStones(g);
     }
 
@@ -52,11 +60,12 @@ public class DrawingPanel extends JPanel {
             int x2 = padX + boardWidth;
             int y2 = y1;
             g.drawLine(x1, y1, x2, y2);
+
         }
 
         for(int column = 0;column < cols ;column++)
         {
-            int x1 = padX + column * cellHeight;
+            int x1 = padX + column * cellWidth;
             int y1 = padY;
             int x2 = x1;
             int y2 = padY + boardHeight;
@@ -72,6 +81,17 @@ public class DrawingPanel extends JPanel {
                 g.drawOval(x - stoneSize / 2, y - stoneSize / 2, stoneSize, stoneSize);
             }
         }
+    }
+
+    void paintSticks(Graphics2D g)
+    {
+        BoardLogic board = frame.getBoardLogic();
+       var stickList =  board.getSticks();
+        for (Stick stick : stickList) {
+            g.drawLine(stick.getNode1X(),stick.getNode1Y(),stick.getNode2X(),stick.getNode2Y());
+        }
+
+
     }
 }
 

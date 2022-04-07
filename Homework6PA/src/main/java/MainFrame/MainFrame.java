@@ -3,6 +3,9 @@ package MainFrame;
 
 
 
+import BackEnd.BoardLogic;
+import BackEnd.Stick;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -10,12 +13,14 @@ import java.awt.*;
 import static javax.swing.SwingConstants.CENTER;
 
 public class MainFrame extends JFrame {
+    BoardLogic boardLogic;
     ConfigPanel configPanel;
     ControlPanel controlPanel;
     DrawingPanel canvas;
 
-    public MainFrame() {
+    public MainFrame(BoardLogic boardLogic) {
         super("My Drawing Application");
+        this.boardLogic = boardLogic;
         init();
     }
 
@@ -26,26 +31,37 @@ public class MainFrame extends JFrame {
         this.controlPanel = new ControlPanel(this);
         this.canvas = new DrawingPanel(this);
 
-      // canvas = new DrawingPanel(this);
+        // canvas = new DrawingPanel(this);
 
 
         //arrange the components in the container (frame)
         this.add(configPanel, BorderLayout.NORTH);
         this.add(controlPanel, BorderLayout.SOUTH);
-        this.add(canvas,BorderLayout.CENTER);
+        this.add(canvas, BorderLayout.CENTER);
 
 
+        this.setSize(400, 500);
 
-
-
-        this.setSize(400,500);
-
- //...TODO
+        //...TODO
 
         //invoke the layout manager
         this.setTitle("LAB6");
         pack();
     }
 
+    public void updateCanvasSize() {
+
+        this.remove(canvas);
+        System.out.println("CREATEBUTTONONCLICK");
+        this.canvas = new DrawingPanel(this);
+        this.add(canvas, BorderLayout.CENTER);
+        this.revalidate();
+        this.repaint();
+    }
+
+    public BoardLogic getBoardLogic()
+    {
+        return boardLogic;
+    }
 
 }
