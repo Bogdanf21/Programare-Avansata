@@ -71,8 +71,8 @@ public class Main {
 
 
 
-        Command view = new ViewCommand(catalog, "knuth67");
-        view.execute();
+       // Command view = new ViewCommand(catalog, "knuth67");
+       // view.execute();
         view = new ViewCommand(catalog, "java17");
         view.execute();
 
