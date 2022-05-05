@@ -5,7 +5,7 @@ import java.math.BigInteger;
 
 @Entity
 @Table(name = "Countries", schema = "Lab8-9", catalog = "lab8-9")
-public class CountriesEntity {
+public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
@@ -57,7 +57,7 @@ public class CountriesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CountriesEntity that = (CountriesEntity) o;
+        Country that = (Country) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
