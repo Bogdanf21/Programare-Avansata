@@ -3,8 +3,16 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="default">
 
+    <persistence-unit name="default">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.example.homework9pa.entities.Continent</class>
+        <class>com.example.homework9pa.entities.Country</class>
+        <class>com.example.homework9pa.entities.City</class>
+        <class>com.example.homework9pa.entities.Country</class>
+        <class>com.example.homework9pa.City</class>
+        <class>com.example.homework9pa.entities.Country</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/postgres" /> <!-- BD Mane -->
@@ -14,7 +22,11 @@
             <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
 
             <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
-            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+            <property name="hibernate.format_sql" value="true" />
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="eclipselink.jdbc.user" value="postgres"/>
+            <property name="eclipselink.jdbc.password" value="bogdan"/> <!-- Show SQL formatted -->
         </properties>
 
     </persistence-unit>
