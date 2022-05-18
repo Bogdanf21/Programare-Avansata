@@ -1,0 +1,13 @@
+
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(²Ï©ó
+^
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(²Ï©ó8İ¡«éŠ0
+Z
+java:S1854"8Remove this useless assignment to local variable "line".(€œéûüÿÿÿÿ8ô¡«éŠ0
+a
+java:S21477"DCombine this catch with the one at line 53, which has the same body.(ï­£Ä8—¢«éŠ0
+A
+java:S26760"Use the original value instead.(…óËÈıÿÿÿÿ8Æ¢«éŠ0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šÀÀ‡8Ó¢«éŠ0
+n
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(«–…³şÿÿÿÿ8ı¢«éŠ0

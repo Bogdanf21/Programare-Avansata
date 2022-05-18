@@ -1,0 +1,10 @@
+
+S
+java:S1128"1Remove this unused import 'com.Entity.Continent'.(¡›°†ÿÿÿÿÿ8’ÖÃëŠ0
+]
+java:S1128"@Remove this unused import 'javax.persistence.NoResultException'.(ŒºíĞ8’ÖÃëŠ0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8’ÖÃëŠ0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8’ÖÃëŠ0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¹œ²

@@ -1,0 +1,8 @@
+
+^	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ìŞ¯¶
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(‘ûØşÿÿÿÿ
+S	java:S1064"9Replace this use of System.out or System.err by a logger.(ƒÄ«ûûÿÿÿÿ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(œÀ…Ÿüÿÿÿÿ
+s
+java:S1192&"XDefine a constant instead of duplicating this literal "Nu a fost gasit niciun " 3 times.(‘ûØşÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¹œ²
