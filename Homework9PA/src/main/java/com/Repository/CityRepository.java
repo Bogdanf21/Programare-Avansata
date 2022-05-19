@@ -1,11 +1,6 @@
 package com.Repository;
 
-import com.Entity.City;
-import com.Entity.Continent;
-
-import javax.persistence.NoResultException;
-import java.util.ArrayList;
-import java.util.List;
+import com.Models.City;
 
 public class CityRepository extends AbstractRepository<City,Double>{
 

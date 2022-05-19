@@ -1,7 +1,6 @@
 package com.Repository;
 
-import com.Entity.Continent;
-import com.Entity.Country;
+import com.Models.Country;
 
 public class CountryRepository extends AbstractRepository<Country,Double> {
     public CountryRepository() {

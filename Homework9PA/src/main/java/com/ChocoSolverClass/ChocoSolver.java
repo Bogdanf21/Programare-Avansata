@@ -1,11 +1,10 @@
-package com.Choco;
+package com.ChocoSolverClass;
 
-import com.Entity.City;
+import com.Models.City;
 import com.Repository.CityRepository;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.variables.IntVar;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
 package com.Repository;
 
-import com.Entity.Continent;
+import com.Models.Continent;
 
 public class ContinentRepository extends AbstractRepository<Continent,Double> {
     public ContinentRepository() {

@@ -1,4 +1,4 @@
-package com.Entity;
+package com.Models;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;

@@ -1,11 +1,11 @@
-package com.Entity;
+package com.Models;
 
-import com.Time.TimeLogger;
+import com.Time.TimeLogPersistence;
 
 import javax.persistence.*;
 
 @Entity
-@EntityListeners({TimeLogger.class})
+@EntityListeners({TimeLogPersistence.class})
 @Table(name = "cities")
 @NamedQueries({
         @NamedQuery(name = "City.findByName",

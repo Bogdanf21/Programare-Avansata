@@ -1,6 +1,6 @@
 package com.Repository;
 
-import com.Controller.EntityManagerFactoryController;
+import com.EntityManagerFactoryController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

@@ -1,12 +1,12 @@
 package com.Time;
 
-import com.Entity.City;
+import com.Models.City;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import java.io.*;
 
-public class TimeLogger {
+public class TimeLogPersistence {
 
     long start;
     @PrePersist

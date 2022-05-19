@@ -1,9 +1,9 @@
-package com.App;
+package com;
 
-import com.Choco.ChocoSolver;
-import com.Entity.City;
-import com.Entity.Continent;
-import com.Entity.Country;
+import com.ChocoSolverClass.ChocoSolver;
+import com.Models.City;
+import com.Models.Continent;
+import com.Models.Country;
 import com.Repository.CityRepository;
 import com.Repository.ContinentRepository;
 import com.Repository.CountryRepository;
@@ -57,6 +57,6 @@ public class Main {
         }
 
         ChocoSolver chocoSolver = new ChocoSolver();
-        chocoSolver.result(500,20000000);
+        chocoSolver.result(10000,30000000);
     }
 }
