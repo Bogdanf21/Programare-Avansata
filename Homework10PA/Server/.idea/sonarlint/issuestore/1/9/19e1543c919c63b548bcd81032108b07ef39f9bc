@@ -1,0 +1,9 @@
+
+U
+java:S1118	":Add a private constructor to hide the implicit public one.(äæ›Øùÿÿÿÿ
+A
+java:S1168A"+Return an empty collection instead of null.(¥¹ï
+b
+java:S3973?"GUse indentation to denote the code conditionally executed by this "if".(Õ¥¨ÿüÿÿÿÿ
+
+java:S2681A"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(¥¹ï

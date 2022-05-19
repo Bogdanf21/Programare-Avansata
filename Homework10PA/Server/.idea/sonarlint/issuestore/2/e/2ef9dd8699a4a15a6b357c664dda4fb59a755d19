@@ -1,0 +1,12 @@
+
+F
+java:S3010")Remove this assignment of "serverSocket".(ÂÀª8íöé”0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(µ¿ç‚8òöé”0
+L
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8õöé”0
+\
+java:S1854.":Remove this useless assignment to local variable "server".(ë‡õ¸ÿÿÿÿÿ8üöé”0
+M
+java:S1481."+Remove this unused "server" local variable.(ë‡õ¸ÿÿÿÿÿ8üöé”0
+`
+java:S1128"DRemove this unused import 'javax.lang.model.element.PackageElement'.(úÊöf8€÷é”0

@@ -1,0 +1,15 @@
+
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ÿŸ¾Ğüÿÿÿÿ
+o
+java:S3012M"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ü‹ªä
+S	java:S106o"9Replace this use of System.out or System.err by a logger.(îæ•šÿÿÿÿÿ
+O	java:S106„"9Replace this use of System.out or System.err by a logger.(ñÒ ¶
+O	java:S106"9Replace this use of System.out or System.err by a logger.(ñÒ ¶
+O	java:S106’"9Replace this use of System.out or System.err by a logger.(€Üš
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+H
+java:S1128"-Remove this unused import 'com.model.Person'.(±·Ü›ÿÿÿÿÿ
+o
+java:S1192S"YDefine a constant instead of duplicating this literal "You need to login first!" 3 times.(õÚô
