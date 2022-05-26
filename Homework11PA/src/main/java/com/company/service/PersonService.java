@@ -46,6 +46,11 @@ public class PersonService  {
         return false;
     }
 
+    public Set<Person> getMostPopularNPersons(Integer n) {
+        return personRepo.getMostPopularNPersons(n);
+
+    }
+
 //    public Set<Person> getFriendsForPerson(Long id) throws NoSuchElementException {
 //        Optional<Person> person = personRepo.findById(id);
 //        if(!person.isPresent())
