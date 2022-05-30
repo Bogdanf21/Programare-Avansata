@@ -1,5 +1,6 @@
 package JavaP;
 
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +19,8 @@ public class ClassInspector {
                 {
                     System.out.println("Type: " + field.getType());
                     System.out.println("Name : " + field.getName());
-                    System.out.println("Annotations (" + field.getAnnotations().length + "): " + field.getAnnotations()[0]+ " \n");
+                    System.out.println("Access Modifier: " + Modifier.toString(field.getModifiers()));
+                    System.out.println("Annotations (" + field.getAnnotations().length + "): " + Arrays.toString(field.getDeclaredAnnotations())+ " \n");
                 });
 
 
@@ -29,6 +31,7 @@ public class ClassInspector {
                 System.out.println("Name:   " + method.getName());
                 System.out.println("Parameters (" + method.getParameterCount() + "):  " + Arrays.toString(method.getParameters()));
                 System.out.println("Return type: " + method.getReturnType());
+                System.out.println("Access Modifier: " + Modifier.toString(method.getModifiers()));
                 System.out.println("Annotations (" + method.getDeclaredAnnotations().length  + "): " + Arrays.toString(method.getDeclaredAnnotations()) + " \n");
 
 

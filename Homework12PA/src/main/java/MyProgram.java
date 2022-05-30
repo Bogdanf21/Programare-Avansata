@@ -1,6 +1,7 @@
 import org.testng.annotations.Test;
 
 public class MyProgram {
+    protected int aProtectedInt = 3;
     @Test
     public static void m1() { }
     public static void m2() { }

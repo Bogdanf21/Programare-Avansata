@@ -15,9 +15,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>uk.co.jemos.podam</groupId>
-            <artifactId>podam</artifactId>
-            <version>7.2.9.RELEASE</version>
+            <groupId>de.scrum-master</groupId>
+            <artifactId>jar-class-loader</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

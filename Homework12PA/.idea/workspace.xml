@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Homework12PA:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="824cf161-a06e-4ef1-87bc-dc7c8f57d8ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FolderClassLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaP/ClassInspector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaP/ClassTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MyProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MyTestFramework.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Homework12PA_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MyProgram2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaP/ClassInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaP/ClassInspector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaP/ClassTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaP/ClassTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JavaP/ClassInspector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaP/ClassInspector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JavaP/ClassTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaP/ClassTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyProgram.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testedFolder/MyProgram.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testedFolder/anotehrFolder/MyProgram.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +58,16 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MyTestFramework">
     <configuration name="MyTestFramework" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyTestFramework" />
@@ -99,7 +110,7 @@
       <workItem from="1653579440285" duration="3000" />
       <workItem from="1653842548355" duration="7536000" />
       <workItem from="1653888484922" duration="2984000" />
-      <workItem from="1653896330048" duration="8294000" />
+      <workItem from="1653896330048" duration="13629000" />
     </task>
     <servers />
   </component>
@@ -122,8 +133,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaP/ClassTester.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="3" />
+          <line>59</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
