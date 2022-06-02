@@ -1,0 +1,28 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(¬Ê¯ıÿÿÿÿ8™ ’Ğ‘0
+R
+java:S1854'"7Remove this useless assignment to local variable "cal".(–”Óúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(”“î€
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ß¢‘òøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÿòÆ‚ÿÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(íÖÅé
+E
+java:S1197%"*Move the array designators [] to the type.(›¨ÀÊùÿÿÿÿ
+C
+java:S1481'"(Remove this unused "cal" local variable.(–”Óúÿÿÿÿ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(ÖôÒ“ıÿÿÿÿ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(»ÅÔ€şÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+@
+java:S1197."*Move the array designators [] to the type.(‘¤…İ
+N	java:S106/"9Replace this use of System.out or System.err by a logger.(¸èÚÙ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(ïµõÿúÿÿÿÿ
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8²ˆĞ‘0
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(±ÛÚ¢8ƒŠÎĞ‘0
+R
+java:S1128"0Remove this unused import 'java.time.DayOfWeek'.(Óò»¸şÿÿÿÿ8ğ¶ÏĞ‘0
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ğ¶ÏĞ‘0
+Y
+java:S1128"7Remove this unused import 'java.time.format.TextStyle'.(·Ïœúÿÿÿÿ8ğ¶ÏĞ‘0
